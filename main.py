@@ -19,3 +19,9 @@ driver = webdriver.Firefox()
 
 url = "https://www.amazon.com"
 driver.get(url)
+
+#this will generate a url from a search term
+def get_url(search_term):
+    template = "https://www.amazon.com/s?k={}&ref=nb_sb_noss_1"
+    search_term = search_term.replace(' ','+')
+    return template.format(search_term)
